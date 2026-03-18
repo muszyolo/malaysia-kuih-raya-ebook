@@ -35,9 +35,32 @@
         line-height: 1.72;
       }
 
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background:
+          repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.05) 0 16px,
+            rgba(111, 148, 91, 0.045) 16px 32px,
+            rgba(214, 174, 90, 0.04) 32px 48px,
+            rgba(143, 79, 43, 0.035) 48px 64px
+          ),
+          repeating-linear-gradient(
+            135deg,
+            transparent 0 24px,
+            rgba(63, 93, 61, 0.04) 24px 28px,
+            transparent 28px 52px
+          );
+        opacity: 0.33;
+        pointer-events: none;
+        z-index: 0;
+      }
+
       a { color: var(--deep); }
       code { font-family: Consolas, "Courier New", monospace; }
-      .page { max-width: 1280px; margin: 0 auto; padding: 24px 20px 72px; }
+      .page { position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: 24px 20px 72px; }
       .hero {
         position: relative;
         overflow: hidden;
@@ -67,8 +90,14 @@
         position: absolute;
         inset: 0;
         background:
-          linear-gradient(135deg, transparent 0 44%, rgba(255, 255, 255, 0.18) 44% 46%, transparent 46% 100%);
-        opacity: 0.45;
+          linear-gradient(135deg, transparent 0 42%, rgba(255, 255, 255, 0.18) 42% 45%, transparent 45% 100%),
+          repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.06) 0 18px,
+            rgba(214, 174, 90, 0.05) 18px 36px,
+            rgba(111, 148, 91, 0.04) 36px 54px
+          );
+        opacity: 0.42;
         pointer-events: none;
       }
 
