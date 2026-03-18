@@ -1,4 +1,4 @@
-# Malaysia Kuih Raya Ebook
+# Heritage of Kuih Tradisional in Malaysia
 
 This repository is a standalone GitHub Pages project for a Malaysian kuih raya ebook organized by state.
 
