@@ -273,17 +273,50 @@
       }
 
       .state-card {
+        position: relative;
         border: 1px solid var(--line);
         border-radius: 24px;
         overflow: hidden;
-        background: linear-gradient(180deg, rgba(255, 252, 248, 0.94), rgba(247, 238, 221, 0.92));
+        background:
+          linear-gradient(180deg, rgba(255, 252, 248, 0.96), rgba(247, 238, 221, 0.93)),
+          repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.03) 0 14px,
+            rgba(214, 174, 90, 0.025) 14px 28px,
+            rgba(111, 148, 91, 0.02) 28px 42px
+          );
+        box-shadow: 0 14px 30px rgba(74, 51, 25, 0.08);
+      }
+
+      .state-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.12), transparent 30%, transparent 70%, rgba(143, 79, 43, 0.05));
+        pointer-events: none;
       }
 
       .state-image {
+        position: relative;
         aspect-ratio: 16 / 10;
         overflow: hidden;
         border-bottom: 1px solid var(--line);
         background: linear-gradient(135deg, rgba(111, 148, 91, 0.16), rgba(214, 174, 90, 0.16), rgba(143, 79, 43, 0.1));
+      }
+
+      .state-image::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(to top, rgba(43, 36, 23, 0.12), transparent 45%),
+          repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.06) 0 18px,
+            rgba(255, 255, 255, 0.02) 18px 36px
+          );
+        pointer-events: none;
       }
 
       .state-image img {
@@ -291,9 +324,12 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transform: scale(1.02);
       }
 
       .state-card-body {
+        position: relative;
+        z-index: 1;
         padding: 20px;
       }
 
@@ -311,6 +347,8 @@
       .recipe-list li + li { margin-top: 8px; }
       .mini { color: var(--muted); font-size: 0.94rem; }
       .photo-note { margin: 12px 0 0; color: var(--muted); font-size: 0.88rem; }
+      .state-card .tag-row { margin-bottom: 12px; }
+      .state-card .recipe-list { margin-top: 16px; }
       .footer { padding-top: 22px; color: var(--muted); font-size: 0.96rem; }
 
       @media (max-width: 960px) {
