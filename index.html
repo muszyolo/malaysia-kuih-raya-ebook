@@ -8,6 +8,12 @@
       name="description"
       content="A GitHub Pages ebook-style link collection of Malaysian kuih raya recipes, grouped by state."
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <style>
       :root {
         --ink: #2b2417;
@@ -31,7 +37,7 @@
           radial-gradient(circle at 85% 18%, rgba(143, 79, 43, 0.14), transparent 22%),
           radial-gradient(circle at bottom right, rgba(214, 174, 90, 0.18), transparent 28%),
           linear-gradient(180deg, #e9dcc1 0%, #f2e4c9 16%, var(--paper) 40%, #fbf5ea 100%);
-        font-family: Georgia, "Times New Roman", serif;
+        font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
         line-height: 1.72;
       }
 
@@ -120,7 +126,15 @@
         max-width: 920px;
         font-size: clamp(2.8rem, 6vw, 5.6rem);
         line-height: 0.94;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-weight: 700;
         letter-spacing: -0.04em;
+        text-wrap: balance;
+      }
+
+      h2,
+      h3 {
+        font-family: "Cormorant Garamond", Georgia, serif;
       }
 
       .subhead {
@@ -200,9 +214,15 @@
       .chapter h2,
       .panel h2 {
         margin: 0 0 14px;
-        font-size: 1rem;
-        letter-spacing: 0.08em;
+        font-size: 1.08rem;
+        letter-spacing: 0.12em;
+        font-weight: 700;
         text-transform: uppercase;
+      }
+
+      .chapter h2,
+      .panel h2 {
+        color: var(--accent);
       }
 
       .toc ul {
@@ -335,8 +355,9 @@
 
       .state-card h3 {
         margin: 0 0 10px;
-        font-size: 1.4rem;
-        line-height: 1.1;
+        font-size: 1.72rem;
+        line-height: 1.02;
+        color: var(--deep);
       }
 
       .recipe-list {
