@@ -318,43 +318,20 @@
         margin-top: 18px;
       }
 
-      .video-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
-        margin-top: 18px;
-      }
-
-      .video-card {
-        border: 1px solid var(--line);
-        border-radius: 24px;
-        overflow: hidden;
-        background:
-          linear-gradient(180deg, rgba(255, 252, 248, 0.96), rgba(247, 238, 221, 0.93));
-        box-shadow: 0 14px 30px rgba(74, 51, 25, 0.08);
-      }
-
-      .video-frame {
+      .video-frame,
+      .state-embed {
         aspect-ratio: 16 / 9;
         background: #102113;
+        border-radius: 18px;
+        overflow: hidden;
       }
 
-      .video-frame iframe {
+      .video-frame iframe,
+      .state-embed iframe {
         display: block;
         width: 100%;
         height: 100%;
         border: 0;
-      }
-
-      .video-body {
-        padding: 18px 20px 20px;
-      }
-
-      .video-body h3 {
-        margin: 0 0 8px;
-        font-size: 1.55rem;
-        line-height: 1.05;
-        color: var(--deep);
       }
 
       .state-nav {
@@ -470,6 +447,7 @@
       .recipe-list li + li { margin-top: 8px; }
       .mini { color: var(--muted); font-size: 0.94rem; }
       .photo-note { margin: 12px 0 0; color: var(--muted); font-size: 0.88rem; }
+      .video-note { margin: 14px 0 8px; color: var(--deep); font-size: 0.92rem; font-weight: 600; }
       .state-card .tag-row { margin-bottom: 12px; }
       .state-card .recipe-list { margin-top: 16px; }
       .footer { padding-top: 22px; color: var(--muted); font-size: 0.96rem; }
@@ -478,8 +456,7 @@
         .metrics,
         .layout,
         .state-grid,
-        .state-nav-grid,
-        .video-grid {
+        .state-nav-grid {
           grid-template-columns: 1fr;
         }
 
@@ -538,7 +515,6 @@
           <ul>
             <li><a href="#overview">Overview</a></li>
             <li><a href="#how-to-use">How to Use This Ebook</a></li>
-            <li><a href="#watch">Watch Recipes</a></li>
             <li><a href="#states">States</a></li>
             <li><a href="#sources">Source and Image Notes</a></li>
           </ul>
@@ -579,74 +555,6 @@
             </ul>
           </section>
 
-          <section id="watch" class="panel">
-            <h2>Watch Recipes</h2>
-            <p class="mini">
-              Embedded YouTube videos for selected traditional kuih recipes. This gives the ebook a faster watch-and-cook experience without leaving the page.
-            </p>
-            <div class="video-grid">
-              <article class="video-card">
-                <div class="video-frame">
-                  <iframe src="https://www.youtube.com/embed/__4h0i37CuI" title="Apam Johol recipe video" loading="lazy" allowfullscreen></iframe>
-                </div>
-                <div class="video-body">
-                  <h3>Apam Johol</h3>
-                  <p>Negeri Sembilan's signature kuih now has a direct embedded video recipe inside the ebook.</p>
-                </div>
-              </article>
-
-              <article class="video-card">
-                <div class="video-frame">
-                  <iframe src="https://www.youtube.com/embed/uNd40zOJDIo" title="Kuih Karas recipe video" loading="lazy" allowfullscreen></iframe>
-                </div>
-                <div class="video-body">
-                  <h3>Kuih Karas</h3>
-                  <p>A crisp traditional kuih video that pairs well with the northern state section.</p>
-                </div>
-              </article>
-
-              <article class="video-card">
-                <div class="video-frame">
-                  <iframe src="https://www.youtube.com/embed/ca1nx0mS2Sw" title="Akok recipe video" loading="lazy" allowfullscreen></iframe>
-                </div>
-                <div class="video-body">
-                  <h3>Akok</h3>
-                  <p>A strong east coast watch option that complements the Kelantan and Terengganu entries.</p>
-                </div>
-              </article>
-
-              <article class="video-card">
-                <div class="video-frame">
-                  <iframe src="https://www.youtube.com/embed/Pvef3bYFKUo" title="Asam Gumpal recipe video" loading="lazy" allowfullscreen></iframe>
-                </div>
-                <div class="video-body">
-                  <h3>Asam Gumpal</h3>
-                  <p>A traditional coconut-sauce kuih video for readers who want another classic festive dessert to explore.</p>
-                </div>
-              </article>
-
-              <article class="video-card">
-                <div class="video-frame">
-                  <iframe src="https://www.youtube.com/embed/9-_aVLT3jDQ" title="Kuih Bakar recipe video" loading="lazy" allowfullscreen></iframe>
-                </div>
-                <div class="video-body">
-                  <h3>Kuih Bakar</h3>
-                  <p>A baked traditional kuih video that fits nicely with the Johor-friendly festive tray idea.</p>
-                </div>
-              </article>
-
-              <article class="video-card">
-                <div class="video-frame">
-                  <iframe src="https://www.youtube.com/embed/dQL3yuD08zs" title="Kuih Gulung recipe video" loading="lazy" allowfullscreen></iframe>
-                </div>
-                <div class="video-body">
-                  <h3>Kuih Gulung</h3>
-                  <p>A Perak-linked traditional kuih video that broadens the ebook beyond only one recipe format.</p>
-                </div>
-              </article>
-            </div>
-          </section>
-
           <section id="states" class="chapter">
             <h2>States</h2>
             <p class="mini">
@@ -667,6 +575,10 @@
                   <p>
                     Kuih Karas is a strong opening pick for Perlis. RASA explicitly describes it as famous among people in Perlis, and its crisp texture makes it a nice raya snack alongside coffee or tea.
                   </p>
+                  <p class="video-note">Watch recipe</p>
+                  <div class="state-embed">
+                    <iframe src="https://www.youtube.com/embed/uNd40zOJDIo" title="Kuih Karas recipe video for Perlis" loading="lazy" allowfullscreen></iframe>
+                  </div>
                   <p class="photo-note">Photo: Wikimedia Commons image of Kuih Caras, used here as the Perlis feature visual.</p>
                   <ul class="recipe-list">
                     <li><a href="https://www.rasa.my/kuih-karas-rapuh-rangup-leka-nikmatinya/">Kuih Karas recipe from RASA</a></li>
@@ -728,6 +640,10 @@
                   <p>
                     Kuih Limas gives Perak a clear identity in the ebook. The recipe note used here describes it as a traditional kuih found in Perak and distinguishes it from tepung pelita.
                   </p>
+                  <p class="video-note">Watch a related traditional kuih video</p>
+                  <div class="state-embed">
+                    <iframe src="https://www.youtube.com/embed/dQL3yuD08zs" title="Kuih Gulung recipe video for Perak" loading="lazy" allowfullscreen></iframe>
+                  </div>
                   <p class="photo-note">Photo: representative Wikimedia Commons festive kuih image photographed in Ipoh, Perak.</p>
                   <ul class="recipe-list">
                     <li><a href="https://www.rasa.my/kuih-limas-mirip-tepung-pelita-tapi-rasa-berbeza/">Kuih Limas recipe from RASA</a></li>
@@ -769,6 +685,10 @@
                   <p>
                     Apam Johol is one of the easiest state matches in Peninsular Malaysia. The recipe source itself labels it as a Nogori tradition, which makes it ideal for this state-based collection.
                   </p>
+                  <p class="video-note">Watch recipe</p>
+                  <div class="state-embed">
+                    <iframe src="https://www.youtube.com/embed/__4h0i37CuI" title="Apam Johol recipe video for Negeri Sembilan" loading="lazy" allowfullscreen></iframe>
+                  </div>
                   <p class="photo-note">Photo: Wikimedia Commons image categorized with Johol and Negeri Sembilan.</p>
                   <ul class="recipe-list">
                     <li><a href="https://www.rasa.my/apam-johol-unik-dibungkus-dengan-kulit-rambai/">Apam Johol recipe</a></li>
@@ -811,6 +731,10 @@
                   <p>
                     For Johor, this ebook uses the Johor-style jongkong variation as the featured festive kuih. It gives the state a more specific identity than repeating generic national raya cookies.
                   </p>
+                  <p class="video-note">Watch a matching festive kuih video</p>
+                  <div class="state-embed">
+                    <iframe src="https://www.youtube.com/embed/9-_aVLT3jDQ" title="Kuih Bakar recipe video for Johor" loading="lazy" allowfullscreen></iframe>
+                  </div>
                   <p class="photo-note">Photo: representative Malay kuih image from Wikimedia Commons, paired with Johor recipe links because an exact open-licensed Jongkong image was not easy to confirm.</p>
                   <ul class="recipe-list">
                     <li><a href="https://www.rasa.my/terliur-gila-weiii-tengok-3-dessert-ni-tak-sabar-nak-cuba/">Kuih Jongkong versi Johor</a></li>
@@ -853,6 +777,10 @@
                   <p>
                     Kelantan's festive sweets deserve a richer state entry, so this card pairs jala mas and nekbat. The source for jala mas directly calls it a traditional Kelantanese sweet.
                   </p>
+                  <p class="video-note">Watch a classic east coast kuih video</p>
+                  <div class="state-embed">
+                    <iframe src="https://www.youtube.com/embed/ca1nx0mS2Sw" title="Akok recipe video for Kelantan" loading="lazy" allowfullscreen></iframe>
+                  </div>
                   <p class="photo-note">Photo: Wikimedia Commons image associated with Jala Mas, used as the Kelantan feature visual.</p>
                   <ul class="recipe-list">
                     <li><a href="https://www.rasa.my/cara-cara-buat-jala-mas-sedap-mudah-secara-homemade/">Jala Mas recipe</a></li>
@@ -874,6 +802,10 @@
                   <p>
                     Kayu Keramat gives Terengganu a distinct entry and avoids duplicating Kelantan too heavily. The featured recipe note explicitly states that the kuih originates from Terengganu.
                   </p>
+                  <p class="video-note">Watch a related Terengganu-style kuih video</p>
+                  <div class="state-embed">
+                    <iframe src="https://www.youtube.com/embed/Pvef3bYFKUo" title="Asam Gumpal recipe video for Terengganu" loading="lazy" allowfullscreen></iframe>
+                  </div>
                   <p class="photo-note">Photo: Wikimedia Commons east coast kuih image tagged to Terengganu, used as a representative visual for the state's festive sweets.</p>
                   <ul class="recipe-list">
                     <li><a href="https://www.rasa.my/kuih-kayu-keramat-lagi-sedap-dari-cakoi/">Kayu Keramat recipe</a></li>
