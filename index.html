@@ -292,6 +292,43 @@
         margin-top: 18px;
       }
 
+      .state-nav {
+        margin-top: 22px;
+        border: 1px solid var(--line);
+        border-radius: 26px;
+        padding: 22px;
+        background:
+          linear-gradient(180deg, rgba(255, 250, 242, 0.96), rgba(246, 237, 219, 0.93));
+        box-shadow: var(--shadow);
+      }
+
+      .state-nav h2 {
+        margin: 0 0 14px;
+        color: var(--accent);
+      }
+
+      .state-nav-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .state-nav a {
+        display: block;
+        padding: 10px 12px;
+        border-radius: 999px;
+        text-decoration: none;
+        text-align: center;
+        color: var(--deep);
+        background: linear-gradient(135deg, #efe0bc, #e4cfa0);
+        border: 1px solid rgba(143, 79, 43, 0.16);
+        font-size: 0.94rem;
+      }
+
+      .state-nav a:hover {
+        background: linear-gradient(135deg, #e7d19f, #dcc28a);
+      }
+
       .state-card {
         position: relative;
         border: 1px solid var(--line);
@@ -375,7 +412,8 @@
       @media (max-width: 960px) {
         .metrics,
         .layout,
-        .state-grid {
+        .state-grid,
+        .state-nav-grid {
           grid-template-columns: 1fr;
         }
 
@@ -406,6 +444,25 @@
           <div class="metric"><strong>13</strong><span>state cards now include visuals</span></div>
           <div class="metric"><strong>20+</strong><span>starter recipe and culture links</span></div>
           <div class="metric"><strong>HTML</strong><span>easy to edit directly in GitHub</span></div>
+        </div>
+      </section>
+
+      <section class="state-nav">
+        <h2>Jump to State</h2>
+        <div class="state-nav-grid">
+          <a href="#perlis">Perlis</a>
+          <a href="#kedah">Kedah</a>
+          <a href="#penang">Pulau Pinang</a>
+          <a href="#perak">Perak</a>
+          <a href="#selangor">Selangor</a>
+          <a href="#negeri-sembilan">Negeri Sembilan</a>
+          <a href="#melaka">Melaka</a>
+          <a href="#johor">Johor</a>
+          <a href="#pahang">Pahang</a>
+          <a href="#kelantan">Kelantan</a>
+          <a href="#terengganu">Terengganu</a>
+          <a href="#sabah">Sabah</a>
+          <a href="#sarawak">Sarawak</a>
         </div>
       </section>
 
